@@ -1,15 +1,47 @@
-# 📊 Nimman Price Perception Insight (NPPI)
-> 🚧 **Current Status:** Work in Progress (WIP) -Now Phase 2 
+# Nimman Price Perception Insight (NPPI)
 
-## 🎯 Project Overview
-A data-driven economic research project aimed at optimizing pricing strategies for the tourism and restaurant sector in Nimman, Chiang Mai. The project integrates Data Science (NLP) with Economics (Hedonic Pricing Theory) to quantify the "Shadow Price" of intangible business attributes like service quality and atmosphere.
-## 👑 My Role: Lead Researcher & Data Analyst (Solo Project)
-Managing the complete pipeline from data collection to economic modeling:
-* **Phase 1: Data Engineering (Completed) 🟢** * Developed a Python web scraping script to extract and clean 25,000+ customer reviews from Google Maps and Tripadvisor. *(Code available in this repository).*
-* **Phase 2: NLP Pipeline (In Progress) ⏳** * Implementing a DeBERTa model to conduct sentiment analysis on unstructured review texts, categorizing them into distinct business attributes.
-* **Phase 3: Economic Modeling (Planned) 📅** * Applying Hedonic Pricing Models to calculate marginal returns on perceived value, delivering actionable business intelligence for local entrepreneurs.
+A data-driven research project quantifying the **"Shadow Price"** of intangible 
+restaurant attributes (Food Quality, Service, Atmosphere) in Nimman, Chiang Mai's 
+competitive dining district.
 
-## 🛠️ Tech Stack & Tools
-* **Data Collection:** Python (BeautifulSoup/Selenium)
-* **Machine Learning:** Pandas, Scikit-learn, DeBERTa (NLP)
-* **Analysis:** Econometrics, Hedonic Pricing Theory
+The project bridges **NLP** and **Hedonic Pricing Theory** to translate unstructured 
+customer sentiment into measurable economic value — providing actionable pricing 
+intelligence for local entrepreneurs.
+
+---
+
+## Research Question
+
+> *Which intangible attributes drive the highest marginal return on perceived customer 
+> value, and how can restaurants price accordingly?*
+
+---
+
+## Methodology
+
+| Phase | Description | Status |
+|---|---|---|
+| **1. Data Engineering** | Scraped and cleaned 25,000+ reviews from Google Maps & Tripadvisor | ✅ Complete |
+| **2. NLP Pipeline** | Attribute-level sentiment extraction using LLM-based classification (Food / Service / Atmosphere) | ✅ Complete |
+| **3. Economic Modeling** | Hedonic regression to estimate marginal willingness-to-pay per attribute | 🔄 In Progress |
+
+---
+
+## Stack
+
+- **Data Collection:** Python, BeautifulSoup / Selenium
+- **NLP / Sentiment Analysis:** LLM-based classification pipeline
+- **Economic Modeling:** Hedonic Pricing Model (OLS Regression), Python (Pandas, Statsmodels)
+- **Visualization:** Planned — Matplotlib / Tableau
+
+---
+
+## Expected Output
+
+A pricing framework identifying which attribute improvements yield the highest ROI on 
+perceived value — designed to support strategic decisions for restaurant operators in 
+tourism-heavy areas.
+
+---
+
+*Part of Senior Research Project — Chiang Mai University, Faculty of Economics*
