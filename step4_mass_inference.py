@@ -10,7 +10,7 @@ print("🚀 เริ่มระบบ Mass Inference (รันข้อมู
 print("="*60)
 
 # 1. ตั้งค่า API KEY ของคุณตรงนี้ (ใส่ในเครื่องหมายคำพูด)
-API_KEY = "AIzaSyDpJzb2X569qOemPEF4QS4ljJNNi23plJE"
+API_KEY = "API_Key_URL"
 client = genai.Client(api_key=API_KEY)
 
 # 2. ตั้งค่าไฟล์
