@@ -4,16 +4,30 @@ from google.genai import types
 import time
 import os
 from tqdm import tqdm
+from dotenv import load_dotenv # 👈 1. เพิ่มไลบรารีสำหรับอ่านไฟล์ตู้นิรภัย .env
 
 print("="*60)
 print("🚀 เริ่มระบบ Mass Inference (รันข้อมูลจริง 20,000 แถว)")
 print("="*60)
 
-# 1. ตั้งค่า API KEY ของคุณตรงนี้ (ใส่ในเครื่องหมายคำพูด)
-API_KEY = "AIzaSyDpJzb2X569qOemPEF4QS4ljJNNi23plJE"
+# ---------------------------------------------------------
+# 🔐 ระบบรักษาความปลอดภัย API KEY
+# ---------------------------------------------------------
+# โหลดข้อมูลจากไฟล์ .env
+load_dotenv()
+
+# ดึงกุญแจมาใช้งานแบบลับๆ
+API_KEY = os.getenv("GEMINI_API_KEY")
+
+# ระบบเช็กกันเหนียว ถ้าลืมสร้างไฟล์ .env ระบบจะเตือนทันที
+if not API_KEY:
+    raise ValueError("🚨 หา API Key ไม่เจอ! ลืมสร้างไฟล์ .env หรือเปล่าครับ?")
+
 client = genai.Client(api_key=API_KEY)
 
+# ---------------------------------------------------------
 # 2. ตั้งค่าไฟล์
+# ---------------------------------------------------------
 INPUT_FILE = 'Tripadvisor_GoogleMaps_Lang_Tagged.csv'
 OUTPUT_FILE = 'NPPI_Sentiment_Results_Final.csv'
 BATCH_SIZE = 20
@@ -36,7 +50,7 @@ def get_gemini_response(prompt, retries=3):
     for attempt in range(retries):
         try:
             response = client.models.generate_content(
-                model='gemini-2.5-flash', # 👈 ใส่ชื่อรุ่น 2.5 Flash ตัวแรงสุดไปเลยครับ!
+                model='gemini-2.5-flash', # ใช้รุ่น 2.5 Flash ตัวแรงสุด!
                 contents=system_instruction + "\n\n[INPUT DATA]\n" + prompt,
             )
             return response.text.strip()
