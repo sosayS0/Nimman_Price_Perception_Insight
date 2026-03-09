@@ -34,7 +34,7 @@ the highest marginal returns.
 ## Methodology
 
 ### Phase 1 — Data Engineering
-- Scraped and cleaned **25,000+ customer reviews** from Google Maps and Tripadvisor 
+- Scraped and cleaned **35,000+ customer reviews** from Google Maps and Tripadvisor 
   covering restaurants in the Nimman area
 - Structured raw text data into an analysis-ready dataset with metadata 
   (rating, date, platform, restaurant category)
