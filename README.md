@@ -33,7 +33,7 @@ Two lenses are used:
 ## 🔬 Methodology
 
 ### Phase 1 — Data
-* **20,800+ reviews** scraped from Google Maps and TripAdvisor across 72 restaurants in Nimman.
+* **15,800+ reviews** scraped from Google Maps and TripAdvisor across 72 restaurants in Nimman.
 * Capped at 210 reviews per restaurant for corpus balance.
 * **Metadata:** rating, date, platform, restaurant.
 
