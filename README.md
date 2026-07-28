@@ -25,7 +25,7 @@ Two lenses are used:
 | **1** | Data collection & engineering | ✅ Done |
 | **2** | Hedonic regression modeling | ✅ Done |
 | **3** | Gold standard annotation (100 reviews, 3 annotators) | ✅ Done |
-| **4** | LLM benchmark — 10 models | ⏳ In progress |
+| **4** | LLM benchmark — 10 models | ✅ Done |
 | **5** | Dashboard | 🔜 Planned |
 
 ---
