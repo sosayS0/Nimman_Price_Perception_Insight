@@ -61,25 +61,27 @@ Built a 100-review labeled dataset for evaluating LLM performance:
 | **Atmosphere** | 46 | 6 | 3 | 45 |
 | **Price** | 14 | 4 | 3 | 79 |
 
-### Phase 4 — LLM Benchmark (in progress)
+### Phase 4 — LLM Benchmark
+
 10 models evaluated on the Gold Standard using identical prompts, temperature=0, via OpenRouter.
+Metrics: Macro F1, Weighted F1, Accuracy, and Cohen's κ per model × aspect.
 
-| # | Model | Provider | Tier |
-| :--- | :--- | :--- | :--- |
-| 1 | **Gemini 2.5 Flash** | Google | ⚡ Fast |
-| 2 | **Gemini 2.5 Pro** | Google | 💎 Flagship |
-| 3 | **GPT-4o mini** | OpenAI | ⚡ Fast |
-| 4 | **GPT-4o** | OpenAI | 💎 Flagship |
-| 5 | **Claude Haiku 4.5** | Anthropic | ⚡ Fast |
-| 6 | **Claude Sonnet 4.6** | Anthropic | 💎 Flagship |
-| 7 | **Llama 3.3 70B** | Meta | OSS |
-| 8 | **Qwen 2.5 72B** | Alibaba | OSS · Thai-best |
-| 9 | **DeepSeek V3.1** | DeepSeek | OSS · MoE |
-| 10 | **DeepSeek R1** | DeepSeek | OSS · Reasoning |
+**Results (ranked by Avg Macro F1):**
 
-* **Primary metric:** Macro F1 per aspect. Also reporting Cohen's κ and confusion matrices.
-* **Next Step:** Best model → applied to full 20,800+ review corpus to compute NASS (Nimman Aspect Sentiment Score) per restaurant.
+| Rank | Model | Provider | Avg Macro F1 | Avg κ |
+|---|---|---|---|---|
+| 1 | Gemini 2.5 Pro | Google | 0.817 | 0.821 |
+| 2 | Gemini 2.5 Flash | Google | 0.799 | 0.810 |
+| 3 | Claude Sonnet 4.6 | Anthropic | 0.783 | 0.781 |
+| 4 | Llama 3.3 70B | Meta | 0.775 | 0.787 |
+| 5 | Claude Haiku 4.5 | Anthropic | 0.770 | 0.772 |
+| 6 | DeepSeek V3.1 | DeepSeek | 0.760 | 0.779 |
+| 7 | GPT-4o | OpenAI | 0.758 | 0.791 |
+| 8 | DeepSeek R1 | DeepSeek | 0.749 | 0.791 |
+| 9 | Qwen 2.5 72B | Alibaba | 0.705 | 0.739 |
+| 10 | GPT-4o mini | OpenAI | 0.704 | 0.743 |
 
+Full per-class precision/recall/F1 and confusion matrices available in the evaluation report.
 ---
 
 ## 💡 Key findings so far
