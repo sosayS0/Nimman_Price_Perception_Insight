@@ -26,7 +26,7 @@ Two lenses are used:
 | **2** | Hedonic regression modeling | ✅ Done |
 | **3** | Gold standard annotation (100 reviews, 3 annotators) | ✅ Done |
 | **4** | LLM benchmark — 10 models | ✅ Done |
-| **5** | Dashboard | 🔜 Planned |
+| **5** | Dashboard | ✅ Done |
 
 ---
 
@@ -112,7 +112,7 @@ the ABSA/NASS layer described here._
 | **Modeling** | Python · `statsmodels` |
 | **Annotation QA** | Python · `sklearn` (Fleiss' κ, Cohen's κ) |
 | **LLM Benchmark** | OpenRouter API |
-| **Dashboard** | Streamlit *(planned)* |
+| **Dashboard** | HTML/CSS/JavaScript + Chart.js (custom-built) |
 
 ---
 
