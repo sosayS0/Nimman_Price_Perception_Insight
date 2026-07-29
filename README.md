@@ -90,7 +90,16 @@ Full per-class precision/recall/F1 and confusion matrices available in the evalu
 * **Atmosphere** had notably more annotator disagreement than other aspects (77% unanimous vs 94.9% for Price), reflecting how subjective ambience language tends to be.
 * No model in this benchmark has published Thai-specific ABSA results — this experiment generates new data.
 
-*(LLM benchmark results to be added after Phase 4)*
+### Next Step
+Applied Gemini 2.5 Flash to the full 20,800+ review corpus to compute NASS 
+(Nimman Aspect Sentiment Score) per restaurant — chosen over the top-ranked Gemini 2.5 Pro 
+under a predefined decision rule (select the cheaper model if the Macro F1 gap to the top 
+performer is under 0.03). Flash's gap of 0.018 cleared that threshold, delivering an 
+estimated ~90% cost reduction versus Pro for a marginal accuracy trade-off.
+
+_The hedonic OLS model (β coefficients above) is validated by an accompanying econometrics 
+research paper using Google Maps' native aspect-based star ratings (N=72), independent of 
+the ABSA/NASS layer described here._
 
 ---
 
