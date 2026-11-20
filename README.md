@@ -103,6 +103,23 @@ the ABSA/NASS layer described here._
 
 ---
 
+💡 Key findings so far
+- Service has the highest marginal effect on perceived value (β = 0.487) — more than Food or Atmosphere.
+- Atmosphere had notably more annotator disagreement than other aspects (77% unanimous vs 94.9% for Price), reflecting how subjective ambience language tends to be.
+- No model in this benchmark has published Thai-specific ABSA results — this experiment generates new data.
+
+📊 Business Impact & Decision Framework (V5)
+Applied Gemini 2.5 Flash to the full 20,800+ review corpus to compute NASS (Nimman Aspect Sentiment Score) per restaurant — chosen over the top-ranked Gemini 2.5 Pro under a predefined decision rule (select the cheaper model if the Macro F1 gap to the top performer is under 0.03). Flash's gap of 0.018 cleared that threshold, delivering an estimated ~90% cost reduction versus Pro for a marginal accuracy trade-off.
+
+To translate these statistical findings into practical SME decisions, V5 introduces an interactive **SCQA Dashboard & Business Impact Estimator** that converts attribute sentiment gaps into projected **12-month Net Economic Value** and payback periods for CapEx prioritization.
+
+![NPPI V5 Dashboard Preview](./NPPI — Nimman Price Perception Insight.png)
+
+👉 **[Click here to view full Dashboard & Impact Report (PDF)](./NPPI — Nimman Price Perception Insight.pdf)**
+
+🛠️ Stack
+...
+
 ## 🛠️ Stack
 
 | Task | Technology |
