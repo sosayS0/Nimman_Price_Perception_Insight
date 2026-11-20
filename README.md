@@ -113,12 +113,9 @@ Applied Gemini 2.5 Flash to the full 20,800+ review corpus to compute NASS (Nimm
 
 To translate these statistical findings into practical SME decisions, V5 introduces an interactive **SCQA Dashboard & Business Impact Estimator** that converts attribute sentiment gaps into projected **12-month Net Economic Value** and payback periods for CapEx prioritization.
 
-![NPPI V5 Dashboard Preview](./NPPI — Nimman Price Perception Insight.png)
+![NPPI V5 Dashboard Preview](./nppi_v5_dashboard.png)
 
-👉 **[Click here to view full Dashboard & Impact Report (PDF)](./NPPI — Nimman Price Perception Insight.pdf)**
-
-🛠️ Stack
-...
+👉 **[Click here to view full Dashboard & Impact Report (PDF)](./nppi_v5_dashboard.pdf)**
 
 ## 🛠️ Stack
 
