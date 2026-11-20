@@ -33,7 +33,7 @@ Two lenses are used:
 ## 🔬 Methodology
 
 ### Phase 1 — Data
-* **15,800+ reviews** scraped from Google Maps and TripAdvisor across 72 restaurants in Nimman.
+* **20,112 reviews** scraped from Google Maps and TripAdvisor across 86 restaurants in Nimman.
 * Capped at 210 reviews per restaurant for corpus balance.
 * **Metadata:** rating, date, platform, restaurant.
 
@@ -42,7 +42,7 @@ Applied Lancaster's Attribute Theory (1966) + OLS regression to quantify how muc
 
 > **Avg_Rating** = 0.148 + 0.298(Food) + 0.487(Service) + 0.184(Atmosphere) − 0.027(Price_Level)
 > 
-> *R² = 0.81 · N = 72 restaurants*
+> *R² = 0.82 · N = 86 restaurants*
 
 The β coefficients are read as relative importance weights — **Service** has the strongest marginal effect, followed by **Food**, then **Atmosphere**. Price Level was not significant (p = 0.23), likely due to the narrow range in this dataset.
 
@@ -91,9 +91,12 @@ Full per-class precision/recall/F1 and confusion matrices available in the evalu
 
 ## 📊 Business Impact & Decision Framework (V23)
 
+### Phase 5 — Dashboard & Appendix
+The interactive **V23** view separates consulting storytelling from technical depth: the main view leads with the SCQA narrative, scenario/impact modeling, and action guidance, while `05 · Appendix` isolates model diagnostics, NASS vs. native-rating checks, theme screening (`1,585` negative Service reviews), and sensitivity/assumption caveats for deeper inspection.
+
 Applied **Gemini 2.5 Flash** across the review corpus (`20,112` scraped reviews in V23) to compute NASS (Nimman Aspect Sentiment Score) per restaurant — chosen over top-ranked **Gemini 2.5 Pro** under a predefined decision rule (select the lower-cost model if the Macro F1 gap is `< 0.03`). Flash's `0.018` gap cleared that threshold, delivering an estimated ~90% cost reduction versus Pro with a marginal accuracy trade-off.
 
-To translate statistical findings into practical SME decisions, **V23** structures the narrative around **SCQA** and a **Business Impact Estimator** (evaluating scenarios, 12-month Net Economic Value, and payback periods for CapEx prioritization), while keeping technical diagnostics, NASS vs. native-rating comparisons, theme screening (`1,585` negative Service reviews), and sensitivity/assumption caveats in the **05 · Appendix** view.
+To translate statistical findings into practical SME decisions, **V23** pairs this with a **Business Impact Estimator** (evaluating scenarios, 12-month Net Economic Value, and payback periods for CapEx prioritization), leaving low-level statistical details and assumptions in the appendix.
 ![NPPI V23 Dashboard Preview](./nppi_v23_dashboard.png)
 
 ## 🛠️ Stack
