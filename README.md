@@ -82,40 +82,19 @@ Metrics: Macro F1, Weighted F1, Accuracy, and Cohen's κ per model × aspect.
 | 10 | GPT-4o mini | OpenAI | 0.704 | 0.743 |
 
 Full per-class precision/recall/F1 and confusion matrices available in the evaluation report.
----
 
 ## 💡 Key findings so far
 
-* **Service** has the highest marginal effect on perceived value (β = 0.487) — more than Food or Atmosphere.
-* **Atmosphere** had notably more annotator disagreement than other aspects (77% unanimous vs 94.9% for Price), reflecting how subjective ambience language tends to be.
-* No model in this benchmark has published Thai-specific ABSA results — this experiment generates new data.
-
-### Next Step
-Applied Gemini 2.5 Flash to the full 20,800+ review corpus to compute NASS 
-(Nimman Aspect Sentiment Score) per restaurant — chosen over the top-ranked Gemini 2.5 Pro 
-under a predefined decision rule (select the cheaper model if the Macro F1 gap to the top 
-performer is under 0.03). Flash's gap of 0.018 cleared that threshold, delivering an 
-estimated ~90% cost reduction versus Pro for a marginal accuracy trade-off.
-
-_The hedonic OLS model (β coefficients above) is validated by an accompanying econometrics 
-research paper using Google Maps' native aspect-based star ratings (N=72), independent of 
-the ABSA/NASS layer described here._
-
----
-
-💡 Key findings so far
-- Service has the highest marginal effect on perceived value (β = 0.487) — more than Food or Atmosphere.
-- Atmosphere had notably more annotator disagreement than other aspects (77% unanimous vs 94.9% for Price), reflecting how subjective ambience language tends to be.
+- **Service** has the highest marginal effect on perceived value (`β = 0.487`, `p = 9.1×10⁻⁹`) — more than Food or Atmosphere, estimated on the native-rating OLS subset (`N = 72`, `R² = 0.8206`).
+- **Atmosphere** had notably more annotator disagreement than other aspects (77% unanimous vs. 94.9% for Price), reflecting how subjective ambience language tends to be.
 - No model in this benchmark has published Thai-specific ABSA results — this experiment generates new data.
 
-📊 Business Impact & Decision Framework (V5)
-Applied Gemini 2.5 Flash to the full 20,800+ review corpus to compute NASS (Nimman Aspect Sentiment Score) per restaurant — chosen over the top-ranked Gemini 2.5 Pro under a predefined decision rule (select the cheaper model if the Macro F1 gap to the top performer is under 0.03). Flash's gap of 0.018 cleared that threshold, delivering an estimated ~90% cost reduction versus Pro for a marginal accuracy trade-off.
+## 📊 Business Impact & Decision Framework (V23)
 
-To translate these statistical findings into practical SME decisions, V5 introduces an interactive **SCQA Dashboard & Business Impact Estimator** that converts attribute sentiment gaps into projected **12-month Net Economic Value** and payback periods for CapEx prioritization.
+Applied **Gemini 2.5 Flash** across the review corpus (`20,112` scraped reviews in V23) to compute NASS (Nimman Aspect Sentiment Score) per restaurant — chosen over top-ranked **Gemini 2.5 Pro** under a predefined decision rule (select the lower-cost model if the Macro F1 gap is `< 0.03`). Flash's `0.018` gap cleared that threshold, delivering an estimated ~90% cost reduction versus Pro with a marginal accuracy trade-off.
 
-![NPPI V5 Dashboard Preview](./nppi_v5_dashboard.png)
-
-👉 **[Click here to view full Dashboard & Impact Report (PDF)](./nppi_v5_dashboard.pdf)**
+To translate statistical findings into practical SME decisions, **V23** structures the narrative around **SCQA** and a **Business Impact Estimator** (evaluating scenarios, 12-month Net Economic Value, and payback periods for CapEx prioritization), while keeping technical diagnostics, NASS vs. native-rating comparisons, theme screening (`1,585` negative Service reviews), and sensitivity/assumption caveats in the **05 · Appendix** view.
+![NPPI V23 Dashboard Preview](./nppi_v23_dashboard.png)
 
 ## 🛠️ Stack
 
